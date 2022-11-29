@@ -1,0 +1,17 @@
+The app takes in a file and console logs the expected output.
+It reads the file and sends the text to processFile() in code.js,
+which handles it line by line, calling helper functions along the way.
+
+The helper function calcMatchDay() increments the match day if one of the teams for that game have already played (then it must be a new match day).
+If it is a new match day, current results are printed via helper function printMatchDay(), which sorts and prints the top 3 results.
+calcMatchDay() also keeps track of which teams have played and resets it on a new match day.
+
+matchDay keeps track of the match day.
+teamsPlayed is a set, which makes checking, adding, and clearing it more optimal than an array or object.
+leagueData is an object with team name as a key and their total points for the league as the value. In hindsight, we could keep track of the number of matches played here also and remove the need to track teamsPlayed and matchDay.
+
+Future enhancements:
+- gaurd against non-txt input filetypes and show appropriate error ui
+- add type checking or use typescript
+- use a class and refactor so functions are more encapsulated and easier to test
+- add unit tests
